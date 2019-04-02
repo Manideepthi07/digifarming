@@ -2,18 +2,18 @@
 header('Content-Type: application/json');
 session_start();
 $cropname=$_SESSION['c'];
-//require_once('db.php');
-$mysqli=new mysqli("localhost","root","","digifarming") or die("Unable to connect to database".mysql_error());
-if(!$mysqli){
-	die("Connection failed: ". $mysqli->error);
+$database="BLUDB";
+$user="dlf90618";
+$password="67dxjg7x2t-97hl5";
+$conn=db2_connect($database,$user,$password);
+if(!$conn){
+	echo "Connection failed";
 }
-$sqlQuery =sprintf("select previousdatabase.State,cropdetails.Quantity*previousdatabase.PricePerTonne as 'TotalPrice' from cropdetails INNER JOIN previousdatabase on cropdetails.Name=previousdatabase.CropName");
-$result = $mysqli->query($sqlQuery);
+$sqlQuery =db2_prepare($conn,"select previousdatabase.State,cropdetails.Quantity*previousdatabase.PricePerTonne as 'TotalPrice' from cropdetails INNER JOIN previousdatabase on cropdetails.Name=previousdatabase.CropName");
+$result = db2_execute($sqlQuery);
 $data = array();
-foreach($result as $row) {
+while($row=db2_fetch_array($result)) {
 		 $data[] = $row;
 }
-$result->close();
-$mysqli->close();
 echo json_encode($data);
 ?>
