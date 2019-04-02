@@ -1,4 +1,5 @@
 ---
 applications:
 - name:digifarming
+  host:dashdb-txn-sbox-yp-lon02-01.services.eu-gb.bluemix.net
   memory:128M
