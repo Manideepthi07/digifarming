@@ -1,0 +1,14 @@
+body{
+	background-image: linear-gradient(rgba(0,0,0), rgba(0,0,0,0.1)),url(mainbackground.jpg); 
+	background-size: cover;
+	height: 100vh;
+	background-position: center;
+}
+a {
+	padding: 20px;
+	text-align: right;
+	text-decoration: none;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 20px;
+    color: white;
+}

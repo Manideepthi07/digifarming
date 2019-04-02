@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="login_style.css">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.id{
+			font-family: "Roboto", sans-serif;
+			font-size: 14px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+
+<div class="login_page">
+	<div class="form">
+
+		<form name="register" method="post" class="register" action="signup.php">
+		<input type="text" placeholder ="User Name" name="uname" required=""><br>
+		<input type="tel" placeholder ="Phone Number" name="phno" required="" onblur="validatephno()"><br>
+			<p id="p1" style="color: white"></p>
+			<input type="text" name="district" placeholder="District" required=""><br>
+			<input type="text" name="state" placeholder="State" required=""><br>
+	<input type="submit" value="Register" name="submit" class="id" style="background-color: rgba(0,0,0,0.2); font-size: 20px;color: white">
+<p class="message" style="color: white" >Already Registered?<a href="#" style="color: white">Login</a></p>
+	</form>
+
+
+	<form class="login" name="login" method="post" action="signin.php" >
+		<input type="text" placeholder ="User Name"  name="uname" required=""><br><br>
+		<input type="tel" placeholder ="Phone Number" name="phno" required=""><br><br>
+		<input type="submit" value="Login" class="id" name="submit" style="background-color: ##414348 ; font-size: 20px;color: white" >
+		<p class="message" style="color: white">Not Registered?<a href="#" style="color: white" >Register</a></p>
+	</form>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	
+	$('.message a').click(function(){
+
+		$('form').animate({height:"toggle", opacity:"toggle"})
+
+	});
+
+</script>
+
+<script type="text/javascript">
+	function validatephno(){
+
+		
+		var phno = document.register.phno.value;
+		var phnopat = /^\d{10}$/;
+
+		if(!phnopat.test(phno))
+		{	
+			document.getElementById("p1").innerHTML = "Please enter a valid 10 digit phone number";
+		}
+		else{
+			document.getElementById("p1").innerHTML = "";
+		}
+
+		
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Crop Details</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+	body{
+		background-image: url(background.jpg);
+		background-repeat: no-repeat;
+	}
+		.f{
+			padding-top: 70px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+	<h1 style="color: black;text-align: center;padding-top: 50px">Crop Details</h1>
+	<form method="post" action="cropdetails.php" class="f">
+	 <input type="text" name="cropname" placeholder="Crop Name" style="height: 30px;"><br><br>
+	 <input type="text" name="emonth" placeholder="Estimated Month" style="height: 30px;"><br><br>
+	 <input type="number" name="equantity" placeholder="Estimated Quantity"style="height: 30px;"><br><br>
+	 <input type="submit" name="submit" value="Submit" style="height: 30px;">
+	</form>
+</body>
