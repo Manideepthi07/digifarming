@@ -1,16 +1,18 @@
 <?php
-mysql_connect("localhost","root","") or die("Not Connected");
-mysql_select_db("digifarming") or die("No Database Found");
+$database="BLUDB";
+$user="dlf90618";
+$password="67dxjg7x2t-97hl5";
+$conn=db2_connect($database,$user,$password);
+if(!$conn){
+	echo "Connection failed";
+}
 if(isset($_POST['submit'])){
 	$Name=$_POST['cropname'];
 	$Month=$_POST['emonth'];
 	$Quantity=$_POST['equantity'];
-	$query="insert into cropdetails(Name,Month,Quantity) values('$Name','$Month','$Quantity')";
-	if(mysql_query($query)){
-		echo "<script>window.open('details.html','_self')</script>";
-	}
-	else{
-		echo "failed to query!!!";
+	$res=db2_exec($conn,"insert into CROPDETAILS(NAME,MONTH,QUANTITY) values('$Name','$Month','$Quantity')");
+        if($res){
+	echo "<script>window.open('details.html','_self')</script>";
 	}
 }
 ?>
