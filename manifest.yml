@@ -1,4 +1,4 @@
 applications:
-- name:digifarming
+- name:digifarmingphp
   random-route:true
   memory:128M
